@@ -1,0 +1,23 @@
+{
+  "name": "@amzn/f3-excelsior-forecast-launcher",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces && mkdir -p build",
+    "dev": "npm run dev --workspace=@amzn/forecast-api & npm run dev --workspace=@amzn/forecast-web",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1120.0"
+  },
+  "dependencies": {
+    "vite": "^8.0.10"
+  }
+}
